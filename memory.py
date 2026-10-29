@@ -52,6 +52,9 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    if state['taps'] >= 150 or not any(hide):
+        return
+
     spot = index(x, y)
     mark = state['mark']
     state['taps'] += 1
@@ -84,10 +87,25 @@ def draw():
         goto(x + 25, y + 8)
         color('black')
         write(tiles[mark], align='Center', font=('Arial', 24, 'normal'))
+
     up()
-    goto(-200, 200)
-    color('black')
-    write(f"Taps: {state['taps']}", font=('Arial', 14, 'bold'))
+    goto(-190, 175)
+    color('blue')
+    write(f"Taps: {state['taps']} / 150", font=('Arial', 14, 'bold'))
+
+    if not any(hide):
+        up()
+        goto(-80, 0)
+        color('green')
+        write("¡Ganaste!", font=('Arial', 30, 'bold'))
+        return
+
+    if state['taps'] >= 150:
+        up()
+        goto(-90, 0)
+        color('red')
+        write("¡Perdiste!", font=('Arial', 30, 'bold'))
+        return
 
     update()
     ontimer(draw, 100)
