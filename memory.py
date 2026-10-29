@@ -82,7 +82,7 @@ def draw():
         up()
         goto(x + 25, y + 8)
         color('black')
-        write(tiles[mark], align='Center' font=('Arial', 30, 'normal'))
+        write(tiles[mark], align='Center', font=('Arial', 24, 'normal'))
 
     update()
     ontimer(draw, 100)
