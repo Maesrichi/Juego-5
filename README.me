@@ -1,1 +1,26 @@
-# Juego 5
+## Juego 5 Memory
+
+Este repositorio contiene el archivo memory.py, que corresponde al videojuego Memory (Memorama) desarrollado en Python. El juego consiste en 
+destapar parejas de fichas iguales en un tablero de 64 casillas, intentando encontrar todos los pares con la menor cantidad de intentos posible.
+
+## Modificaciones Realizadas
+
+### 1. Contador de clics y límite de intentos
+
+Se agregó un contador de clics (taps) para registrar el progreso del jugador. Se filtraron los clics realizados fuera de los límites del 
+tablero, se ajustaron las coordenadas del texto para que el contador sea visible en pantalla y se estableció un límite máximo de 150 intentos para 
+añadir una condición de derrota.
+
+### 2. Detección de victoria y estado de juego
+
+Se implementó la lógica necesaria para detectar cuándo todos los cuadros se han destapado. Al completar el tablero antes de agotar los clics, 
+el sistema muestra un mensaje de "¡Ganaste!" y desactiva la interacción para finalizar la partida.
+
+### 3. Símbolos visuales y mejoras de formato
+
+Se sustituyeron los números por una lista de 32 símbolos visuales únicos para formar los pares del juego. Además, se corrigieron detalles 
+sintácticos (como comas faltantes) y se ajustó el tamaño de la tipografía para mejorar la claridad e integración visual de los íconos.
+
+### 4. Centrado de contenido en las casillas
+
+Se ajustaron las coordenadas de dibujo para que los elementos gráficos aparezcan perfectamente centrados dentro de cada cuadro del tablero.
